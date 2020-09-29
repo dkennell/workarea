@@ -10,7 +10,7 @@ In relational database systems, identifiers are typically numbers that are autom
 
 ## How Workarea Identifies Orders
 
-When an order is created or instantiated, it is assigned a randomized 5-digit uppercase hexadecimal value as its ID. Workarea does this so order numbers are legible to human eyes, and will play nicely on a distributed database system such as MongoDB. This ID is used throughout the system to link orders to their Payment and Shipping information, as well as in the admin for display purposes. Although this order ID is "randomized", `SecureRandom` generation uses the current system time to determine a seed value for its algorithm, so when compared, they are actually sequential already:
+When an order is created or instantiated, it is assigned a randomized 5-digit uppercase hexadecimal value as its ID. Workarea does this so order numbers are legible to human eyes, and will play nicely on MongoDB. This ID is used throughout the system to link orders to their Payment and Shipping information, as well as in the admin for display purposes. Although this order ID is "randomized", `SecureRandom` generation uses the current system time to determine a seed value for its algorithm, so when compared, they are actually sequential already:
 
 ```ruby
 def test_sequential_order_numbering
