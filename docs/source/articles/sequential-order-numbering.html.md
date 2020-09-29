@@ -16,7 +16,7 @@ When an order is created or instantiated, it is assigned a randomized 5-digit up
 def test_sequential_order_numbering
   orders = [create_order, create_order]
 
-  assert(orders.second < orders.first) # => true
+  assert(orders.second.id > orders.first) # => true
 end
 ```
 
